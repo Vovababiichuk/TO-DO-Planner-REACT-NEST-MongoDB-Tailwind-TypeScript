@@ -1,4 +1,4 @@
-# <span align="left"> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="react" width="50" height="50"/> </a> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original-wordmark.svg" alt="react" width="50" height="50"/> </a> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> 
+# <span align="left"> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" /> alt="react" width="50" height="50"/> </a> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original-wordmark.svg" alt="react" width="100" height="100"/> </a> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> 
 ![Alt-текст](./images/preview.png)
 
             
