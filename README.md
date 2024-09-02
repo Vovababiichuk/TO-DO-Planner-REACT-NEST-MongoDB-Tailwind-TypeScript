@@ -1,6 +1,8 @@
-# <span align="left"> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="react" width="50" height="50"/> </a> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="react" width="50" height="50"/> </a> </span>
+# <span align="left"> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="react" width="50" height="50"/> </a> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="react" width="50" height="50"/> </a> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg"  width="50" height="50" /> </a> </span>
 ![Alt-текст](./images/preview.png)
 
+            
+          
 # Price Cards Layout
 
 ### [Site link](https://vovababiichuk.github.io/Price-cards-layout-Grom-Code/)
