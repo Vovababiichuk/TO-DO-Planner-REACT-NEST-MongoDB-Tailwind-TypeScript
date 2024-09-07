@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { TaskInterface } from '../Interfaces/interfaces';
 
-const baseUrl = 'https://to-do-planner-nest-back.vercel.app';
+const baseUrl = 'https://to-do-planner-nest-back.vercel.app/tasks';
 
 export const useTasks = () => {
   const [tasks, setTasks] = useState<TaskInterface[]>([]);
