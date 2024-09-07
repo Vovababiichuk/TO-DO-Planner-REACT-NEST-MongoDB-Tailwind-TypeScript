@@ -1,7 +1,5 @@
 # TO-DO-PLANNER
 
-## Project Overview
-
 This is a full-stack To-Do Planner application built using modern web technologies. The project includes both a frontend and a backend, with the following tech stack:
 
 - **Frontend**: Built with [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [Vite](https://vitejs.dev/), and styled using [Tailwind CSS](https://tailwindcss.com/).
@@ -9,7 +7,7 @@ This is a full-stack To-Do Planner application built using modern web technologi
 
 ## Technologies Used
 
-<span align="left">
+<span style="display: flex; gap: 20px;">
   <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" alt="react" width="100" height="100"/>
   </a>
