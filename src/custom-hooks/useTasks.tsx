@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import { TaskInterface } from '../Interfaces/interfaces';
-import { toast } from 'react-toastify';
 import confetti from 'canvas-confetti';
+import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import { TaskInterface } from '../Interfaces/interfaces';
 
-const baseUrl = 'http://localhost:3000/tasks';
+const baseUrl = 'https://to-do-planner-nest-back.vercel.app/';
 
 export const useTasks = () => {
   const [tasks, setTasks] = useState<TaskInterface[]>([]);
