@@ -13,7 +13,7 @@ This is a full-stack To-Do Planner application built using modern web technologi
 
 ## Site Links
 
-- [View the live site]()
+- [View the live site](https://to-do-planner-react-nest-mongo-db-tailwind-type-script.vercel.app/)
 - [Backend GitHub Repository](https://github.com/Vovababiichuk/NestJS-Backend-To-Do-Planner)
 
 ## Author
