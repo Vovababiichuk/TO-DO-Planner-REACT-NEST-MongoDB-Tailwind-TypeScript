@@ -7,7 +7,7 @@ This is a full-stack To-Do Planner application built using modern web technologi
 
 ## Technologies Used
 
-<span style="display: flex; gap: 20px;">
+<span style="display: inline-flex; gap: 20px;">
   <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" alt="react" width="100" height="100"/>
   </a>
@@ -24,6 +24,7 @@ This is a full-stack To-Do Planner application built using modern web technologi
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="tailwindcss" width="100" height="100"/>
   </a>
 </span>
+
 
 ![Project Preview](./public/preview.png)
 
