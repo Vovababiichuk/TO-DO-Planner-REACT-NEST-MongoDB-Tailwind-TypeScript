@@ -27,11 +27,14 @@ This is a full-stack To-Do Planner application built using modern web technologi
   </a>
 </span>
 
-![Project Preview](./front/public/preview.png)
+![Project Preview](./public/preview.png)
 
-## Site Link
+## Site Links
 
 - [View the live site](#)
+- [Frontend GitHub Repository](https://github.com/yourusername/to-do-planner)
+- [Backend GitHub Repository](https://github.com/Vovababiichuk/NestJS-Backend-To-Do-Planner)
+- [Personal Website](https://volodymyrcodepro.site/)
 
 ## Author
 
