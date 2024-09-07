@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useState, forwardRef } from 'react'
 import { Plus } from 'lucide-react'
 import { CreateTaskInputProps } from '../Interfaces/interfaces'
 
-const CreateTaskInput = ({ onCreate }: CreateTaskInputProps) => {
-	const [inputValue, setInputValue] = useState('')
+const CreateTaskInput = forwardRef<HTMLInputElement, CreateTaskInputProps>(({ onCreate }, ref) => {
+	const [inputValue, setInputValue] = useState('');
 
 	const handleTaskValue = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setInputValue(e.target.value)
@@ -20,6 +20,7 @@ const CreateTaskInput = ({ onCreate }: CreateTaskInputProps) => {
 	return (
 		<form className='flex items-center gap-2' onSubmit={handleTaskCreate}>
 			<input
+				ref={ref}
 				className='py-2 px-4 rounded-[10px] border-2 border-bgTask w-full'
 				type='text'
 				placeholder='Create your task...'
@@ -32,6 +33,6 @@ const CreateTaskInput = ({ onCreate }: CreateTaskInputProps) => {
 			</button>
 		</form>
 	)
-}
+})
 
 export default CreateTaskInput

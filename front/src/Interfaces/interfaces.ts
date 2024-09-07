@@ -22,4 +22,5 @@ export interface TasksListProps {
   onDelete: (_id: string) => void;
   onShowToast: (message: string) => void;
   onUpdate: (_id: string, newText: string) => void;
+  onFilePlusClick: () => void;
 }
