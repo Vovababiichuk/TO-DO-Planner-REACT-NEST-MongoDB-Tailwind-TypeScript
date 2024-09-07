@@ -1,20 +1,20 @@
-import { TaskInterface } from '../Interfaces/interfaces';
+import { FilePlus } from 'lucide-react'
+import { TasksListProps } from '../Interfaces/interfaces';
 import Task from './Task';
 
-interface TasksListProps {
-  tasks: TaskInterface[];
-  onToggleDone: (id: string, done: boolean) => void;
-  onDelete: (id: string) => void;
-  onShowToast: (message: string) => void;
-  onUpdate: (id: string, newText: string) => void;
-}
-
 const TasksList = ({ tasks, onToggleDone, onDelete, onShowToast, onUpdate }: TasksListProps) => {
+
   return (
     <ul className="flex flex-col gap-4 text-left pt-4 text-xl">
+      {tasks.length === 0 && (
+        <li className="flex flex-col items-center justify-center gap-2 text-gray-500 pt-16">
+          <FilePlus size={45} className="mr-2 cursor-pointer hover:text-gray-400 transition-all duration-300" />
+          Create your first task
+        </li>
+      )}
       {tasks.map(task => (
         <Task
-          key={task.id}
+          key={task._id}
           {...task}
           onToggleDone={onToggleDone}
           onDelete={onDelete}

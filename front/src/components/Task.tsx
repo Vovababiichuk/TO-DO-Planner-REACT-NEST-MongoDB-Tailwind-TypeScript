@@ -3,7 +3,7 @@ import { DeleteIcon, Edit } from 'lucide-react';
 import { TaskProps } from '../Interfaces/interfaces';
 import clsx from 'clsx';
 
-const Task = ({ text, done, id, onToggleDone, onDelete, onShowToast, onUpdate }: TaskProps) => {
+const Task = ({ text, done, _id, onToggleDone, onDelete, onShowToast, onUpdate }: TaskProps) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(text);
 
@@ -13,14 +13,14 @@ const Task = ({ text, done, id, onToggleDone, onDelete, onShowToast, onUpdate }:
 
   const handleSaveEdit = () => {
     if (editedText !== text) {
-      onUpdate(id, editedText);
+      onUpdate(_id, editedText);
     }
     setIsEditing(false);
   };
 
   const handleCheckboxChange = () => {
     const newDoneState = !done;
-    onToggleDone(id, newDoneState);
+    onToggleDone(_id, newDoneState);
 
     if (newDoneState) {
       onShowToast('Great work! Keep it going 🔥');
@@ -72,7 +72,7 @@ const Task = ({ text, done, id, onToggleDone, onDelete, onShowToast, onUpdate }:
           className="bg-transparent border-none outline-none p-0"
           title="Delete"
           onClick={() => {
-            onDelete(id);
+            onDelete(_id);
           }}
         >
           <DeleteIcon

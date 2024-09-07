@@ -1,7 +1,7 @@
 export interface TaskInterface {
   text: string;
   done: boolean;
-  id: string;
+  _id: string;
 }
 
 export interface CreateTaskInputProps {
@@ -9,14 +9,17 @@ export interface CreateTaskInputProps {
 }
 
 export interface TaskProps extends TaskInterface {
-  onToggleDone: (id: string, done: boolean) => void;
-  onDelete: (id: string) => void;
+  onToggleDone: (_id: string, done: boolean) => void;
+  onDelete: (_id: string) => void;
   onShowToast: (message: string) => void;
-  onUpdate: (id: string, newText: string) => void;
+  onUpdate: (_id: string, newText: string) => void;
 }
+
 
 export interface TasksListProps {
   tasks: TaskInterface[];
-  onToggleDone: (id: string, done: boolean) => void;
-  onDelete: (id: string) => void;
+  onToggleDone: (_id: string, done: boolean) => void;
+  onDelete: (_id: string) => void;
+  onShowToast: (message: string) => void;
+  onUpdate: (_id: string, newText: string) => void;
 }
