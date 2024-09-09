@@ -1,17 +1,27 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DeleteIcon, Edit } from 'lucide-react';
 import { TaskProps } from '../Interfaces/interfaces';
 import clsx from 'clsx';
+import { toast } from 'react-toastify';
 
 const Task = ({ text, done, _id, onToggleDone, onDelete, onShowToast, onUpdate }: TaskProps) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(text);
+
+  useEffect(() => {
+    setEditedText(text);
+  }, [text]);
 
   const handleEditTask = () => {
     setIsEditing(true);
   };
 
   const handleSaveEdit = () => {
+    if (!editedText.trim()) {
+      toast.error('Field cannot be empty! 🛑');
+      return;
+    }
+
     if (editedText !== text) {
       onUpdate(_id, editedText);
     }
@@ -55,7 +65,7 @@ const Task = ({ text, done, _id, onToggleDone, onDelete, onShowToast, onUpdate }
             autoFocus
           />
         ) : (
-          <span>{text}</span>
+          <span className="break-all px-1">{text}</span>
         )}
       </div>
       <div className="flex items-center gap-2">

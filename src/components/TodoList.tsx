@@ -10,8 +10,6 @@ const TodoList = () => {
   const { tasks, addTask, toggleTaskDone, deleteTask, updateTask } = useTasks();
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const sortedTasks = [...tasks].sort((a, b) => (a.done === b.done ? 0 : a.done ? 1 : -1));
-
   const showToast = (message: string) => {
     toast.success(message);
   };
@@ -26,7 +24,7 @@ const TodoList = () => {
       <TaskStatus tasks={tasks} />
       <CreateTaskInput onCreate={addTask} ref={inputRef} />
       <TasksList
-        tasks={sortedTasks}
+        tasks={tasks}
         onToggleDone={toggleTaskDone}
         onDelete={deleteTask}
         onUpdate={updateTask}
