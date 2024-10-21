@@ -1,5 +1,5 @@
 import { ClipboardList } from 'lucide-react';
-import { TaskInterface } from '../Interfaces/interfaces';
+import { TaskInterface } from '../types/types';
 
 const TaskStatus = ({ tasks }: { tasks: TaskInterface[] }) => {
   return (

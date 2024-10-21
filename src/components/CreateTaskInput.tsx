@@ -1,6 +1,9 @@
-import { useState, forwardRef } from 'react';
 import { Plus } from 'lucide-react';
-import { CreateTaskInputProps } from '../Interfaces/interfaces';
+import { forwardRef, useState } from 'react';
+
+type CreateTaskInputProps = {
+  onCreate: (text: string) => void;
+};
 
 const CreateTaskInput = forwardRef<HTMLInputElement, CreateTaskInputProps>(({ onCreate }, ref) => {
   const [inputValue, setInputValue] = useState('');

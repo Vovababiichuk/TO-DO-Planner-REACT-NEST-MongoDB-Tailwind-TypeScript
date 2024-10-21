@@ -1,10 +1,16 @@
-import { useEffect, useState } from 'react';
-import { DeleteIcon, Edit } from 'lucide-react';
-import { TaskProps } from '../Interfaces/interfaces';
 import clsx from 'clsx';
+import { DeleteIcon, Edit } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import { TaskInterface } from '../types/types';
 
-const Task = ({ text, done, _id, onToggleDone, onDelete, onShowToast, onUpdate }: TaskProps) => {
+type TaskProps = TaskInterface & {
+  onUpdateTask: (_id: string, updatedFields: Partial<TaskInterface>) => void;
+  onDelete: (_id: string) => void;
+  onShowToast: (message: string) => void;
+};
+
+const Task = ({ text, done, _id, onUpdateTask, onDelete, onShowToast }: TaskProps) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(text);
 
@@ -22,21 +28,19 @@ const Task = ({ text, done, _id, onToggleDone, onDelete, onShowToast, onUpdate }
       return;
     }
 
-    if (editedText !== text) {
-      onUpdate(_id, editedText);
-    }
+    onUpdateTask(_id, { text: editedText });
     setIsEditing(false);
   };
 
-  const handleCheckboxChange = () => {
-    const newDoneState = !done;
-    onToggleDone(_id, newDoneState);
-
-    if (newDoneState) {
-      onShowToast('Great work! Keep it going 🔥');
-    } else {
-      onShowToast('Task is back! Keep pushing forward! 🚀');
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSaveEdit();
     }
+  };
+
+  const handleCheckboxChange = () => {
+    onUpdateTask(_id, { done: !done });
+    onShowToast(!done ? 'Great work! Keep it going 🔥' : 'Task is back! Keep pushing forward! 🚀');
   };
 
   return (
@@ -62,6 +66,7 @@ const Task = ({ text, done, _id, onToggleDone, onDelete, onShowToast, onUpdate }
             value={editedText}
             onChange={e => setEditedText(e.target.value)}
             onBlur={handleSaveEdit}
+            onKeyDown={handleKeyDown}
             autoFocus
           />
         ) : (
@@ -74,7 +79,7 @@ const Task = ({ text, done, _id, onToggleDone, onDelete, onShowToast, onUpdate }
           title="Edit"
           className="bg-transparent border-none outline-none p-0"
         >
-          {done === false && (
+          {!done && (
             <Edit className="text-gray-500 hover:text-accent transition-all duration-200 ease-in" />
           )}
         </button>
