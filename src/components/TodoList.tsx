@@ -9,7 +9,15 @@ import Task from './Task';
 import TaskProgress from './TaskProgress';
 
 const sortTasks = (tasks: TaskProps[]) => {
-  return tasks.sort((a, b) => Number(a.isDone) - Number(b.isDone));
+  return tasks.sort((a, b) => {
+    if (a.isDone !== b.isDone) {
+      return Number(a.isDone) - Number(b.isDone);
+    }
+    if (!a.isDone) {
+      return new Date(b.createdDate).getTime() - new Date(a.createdDate).getTime();
+    }
+    return 0;
+  });
 };
 
 const TodoList = () => {
