@@ -2,23 +2,11 @@ import { useRef } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useTasks } from '../hooks/useTasks';
-import { TaskProps } from '../types/types';
+import { sortTasks } from '../utils/utils';
 import CreateTaskInput from './CreateTaskInput';
 import EmptyTaskList from './EmptyTaskList';
 import Task from './Task';
 import TaskProgress from './TaskProgress';
-
-const sortTasks = (tasks: TaskProps[]) => {
-  return tasks.sort((a, b) => {
-    if (a.isDone !== b.isDone) {
-      return Number(a.isDone) - Number(b.isDone);
-    }
-    if (!a.isDone) {
-      return new Date(b.createdDate).getTime() - new Date(a.createdDate).getTime();
-    }
-    return 0;
-  });
-};
 
 const TodoList = () => {
   const { tasks, isLoading, handleAddTask, handleDeleteTask, handleUpdateTask } = useTasks();

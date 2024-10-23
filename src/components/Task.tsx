@@ -1,10 +1,9 @@
 import clsx from 'clsx';
-import { format } from 'date-fns';
-import { enUS } from 'date-fns/locale/en-US';
 import { DeleteIcon, Edit } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { TaskProps } from '../types/types';
+import { formatDate } from '../utils/utils';
 
 type TaskComponentProps = TaskProps & {
   onUpdateTask: (id: string, updatedFields: Partial<TaskProps>) => void;
@@ -56,10 +55,6 @@ const Task = ({
     onShowToast(
       !isDone ? 'Great work! Keep it going 🔥' : 'Task is back! Keep pushing forward! 🚀',
     );
-  };
-
-  const formatDate = (date: Date | string) => {
-    return format(new Date(date), 'd MMMM yyyy, HH:mm', { locale: enUS });
   };
 
   return (
