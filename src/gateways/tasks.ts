@@ -1,6 +1,6 @@
 import { TaskProps } from '../types/types';
 
-const baseUrl = 'https://to-do-planner-nest-back.vercel.app/tasks';
+const baseUrl = 'https://nest-js-backend-to-do-planner.vercel.app/tasks';
 
 const handleRequest = async (url: string, options?: RequestInit) => {
   try {
