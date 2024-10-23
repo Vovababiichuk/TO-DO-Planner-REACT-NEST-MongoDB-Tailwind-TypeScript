@@ -1,7 +1,6 @@
 import { TaskProps } from '../types/types';
 
-// const baseUrl = 'https://to-do-planner-nest-back.vercel.app/tasks';
-const baseUrl = 'http://localhost:8080/tasks';
+const baseUrl = 'https://to-do-planner-nest-back.vercel.app/tasks';
 
 const handleRequest = async (url: string, options?: RequestInit) => {
   try {
