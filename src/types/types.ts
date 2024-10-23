@@ -1,5 +1,8 @@
-export type TaskInterface = {
+export type TaskProps = {
   _id: string;
+  id: string;
   text: string;
-  done: boolean;
+  isDone: boolean;
+  createdDate: Date;
+  updatedDate: Date;
 };

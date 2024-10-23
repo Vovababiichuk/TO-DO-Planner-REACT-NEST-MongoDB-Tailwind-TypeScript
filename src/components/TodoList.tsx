@@ -2,10 +2,15 @@ import { useRef } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useTasks } from '../hooks/useTasks';
+import { TaskProps } from '../types/types';
 import CreateTaskInput from './CreateTaskInput';
 import EmptyTaskList from './EmptyTaskList';
 import Task from './Task';
-import TaskStatus from './TaskStatus';
+import TaskProgress from './TaskProgress';
+
+const sortTasks = (tasks: TaskProps[]) => {
+  return tasks.sort((a, b) => Number(a.isDone) - Number(b.isDone));
+};
 
 const TodoList = () => {
   const { tasks, isLoading, handleAddTask, handleDeleteTask, handleUpdateTask } = useTasks();
@@ -22,18 +27,19 @@ const TodoList = () => {
   return (
     <div className="pt-10 mx-auto text-center max-w-[500px]">
       <h1 className="mb-6 text-4xl">To-Do Planner</h1>
-      <TaskStatus tasks={tasks} />
+      <TaskProgress tasks={tasks} />
       <CreateTaskInput onCreate={handleAddTask} ref={inputRef} />
-      {isLoading && <div className="text-gray-500 text-xl pt-12">Loading...</div>}
-      {!isLoading && (
+      {isLoading ? (
+        <div className="text-gray-500 text-xl pt-12">Loading...</div>
+      ) : (
         <>
           {tasks.length === 0 ? (
             <EmptyTaskList onFilePlusClick={focusOnInput} />
           ) : (
             <ul className="flex flex-col gap-4 text-left pt-4 text-xl">
-              {tasks.map(task => (
+              {sortTasks(tasks).map(task => (
                 <Task
-                  key={task._id}
+                  key={task.id}
                   {...task}
                   onUpdateTask={handleUpdateTask}
                   onDelete={handleDeleteTask}
