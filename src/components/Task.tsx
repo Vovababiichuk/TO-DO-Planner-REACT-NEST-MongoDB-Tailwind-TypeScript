@@ -5,22 +5,14 @@ import { toast } from 'react-toastify';
 import { TaskProps } from '../types/types';
 import { formatDate } from '../utils/utils';
 
-type TaskComponentProps = TaskProps & {
+type TaskComponentProps = {
+  task: TaskProps;
   onUpdateTask: (id: string, updatedFields: Partial<TaskProps>) => void;
   onDelete: (id: string) => void;
-  onShowToast: (message: string) => void;
 };
 
-const Task = ({
-  text,
-  isDone,
-  id,
-  onUpdateTask,
-  onDelete,
-  onShowToast,
-  createdDate,
-  updatedDate,
-}: TaskComponentProps) => {
+const Task = ({ task, onUpdateTask, onDelete }: TaskComponentProps) => {
+  const { id, text, isDone, createdDate, updatedDate } = task;
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(text);
 
@@ -52,7 +44,7 @@ const Task = ({
 
   const handleCheckboxChange = () => {
     onUpdateTask(id, { isDone: !isDone });
-    onShowToast(
+    toast.success(
       !isDone ? 'Great work! Keep it going 🔥' : 'Task is back! Keep pushing forward! 🚀',
     );
   };

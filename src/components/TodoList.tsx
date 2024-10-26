@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useTasks } from '../hooks/useTasks';
 import { sortTasks } from '../utils/utils';
@@ -11,10 +11,6 @@ import TaskProgress from './TaskProgress';
 const TodoList = () => {
   const { tasks, isLoading, handleAddTask, handleDeleteTask, handleUpdateTask } = useTasks();
   const inputRef = useRef<HTMLInputElement>(null);
-
-  const showToast = (message: string) => {
-    toast.success(message);
-  };
 
   const focusOnInput = () => {
     inputRef.current?.focus();
@@ -36,10 +32,9 @@ const TodoList = () => {
               {sortTasks(tasks).map(task => (
                 <Task
                   key={task.id}
-                  {...task}
+                  task={task}
                   onUpdateTask={handleUpdateTask}
                   onDelete={handleDeleteTask}
-                  onShowToast={showToast}
                 />
               ))}
             </ul>
